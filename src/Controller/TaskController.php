@@ -58,16 +58,17 @@ class TaskController extends AbstractController
      * @Route("/tasks/{id}/edit", name="task_edit")
      * @param Task $task
      * @param Request $request
+     * @param TaskSaveService $taskSaveService
      * @return RedirectResponse|Response
      */
-    public function editTask(Task $task, Request $request)
+    public function editTask(Task $task, Request $request, TaskSaveService $taskSaveService)
     {
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $taskSaveService->saveTask();
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');
 
