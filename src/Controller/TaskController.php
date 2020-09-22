@@ -4,39 +4,48 @@ namespace App\Controller;
 
 use App\Entity\Task;
 use App\Form\TaskType;
+use App\Repository\TaskRepository;
+use App\Service\Task\Task\TaskFindService;
+use App\Service\Task\Task\RemoveService;
+use App\Service\Task\Task\TaskSaveService;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class TaskController extends AbstractController
 {
     /**
      * @Route("/tasks", name="task_list")
+     * @param TaskRepository $taskRepository
+     * @return Response
      */
-    public function listAction()
+    public function listTask(TaskRepository $taskRepository)
     {
-        return $this->render('task/list.html.twig', ['tasks' => $this->getDoctrine()->getRepository(Task::class)->findAll()]);
+        $tasks = $taskRepository->findAllTasks();
+
+        return $this->render('task/list.html.twig', [
+            'tasks' => $tasks
+        ]);
     }
 
     /**
      * @Route("/tasks/create", name="task_create")
      * @param Request $request
+     * @param TaskSaveService $taskSaveService
      * @return RedirectResponse|Response
      */
-    public function createAction(Request $request)
+    public function createTask(Request $request, TaskSaveService $taskSaveService)
     {
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+        if ( $form->isSubmitted() && $form->isValid()) {
 
-            $em->persist($task);
-            $em->flush();
+            $taskSaveService->saveTask($task);
 
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
@@ -50,16 +59,17 @@ class TaskController extends AbstractController
      * @Route("/tasks/{id}/edit", name="task_edit")
      * @param Task $task
      * @param Request $request
+     * @param TaskSaveService $taskSaveService
      * @return RedirectResponse|Response
      */
-    public function editAction(Task $task, Request $request)
+    public function editTask(Task $task, Request $request, TaskSaveService $taskSaveService)
     {
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+        if ( $form->isSubmitted() && $form->isValid()) {
+            $taskSaveService->saveTask();
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');
 
@@ -75,12 +85,14 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/toggle", name="task_toggle")
      * @param Task $task
+     * @param TaskSaveService $taskSaveService
      * @return RedirectResponse
      */
-    public function toggleTaskAction(Task $task)
+    public function toggleTask(Task $task, TaskSaveService $taskSaveService)
     {
         $task->toggle(!$task->isDone());
-        $this->getDoctrine()->getManager()->flush();
+
+        $taskSaveService->saveTask($task);
 
         $this->addFlash('success', sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle()));
 
@@ -90,13 +102,12 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      * @param Task $task
+     * @param RemoveService $taskRemoveService
      * @return RedirectResponse
      */
-    public function deleteTaskAction(Task $task)
+    public function deleteTaskAction(Task $task, RemoveService $taskRemoveService)
     {
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($task);
-        $em->flush();
+        $taskRemoveService->removeTask($task);
 
         $this->addFlash('success', 'La tâche a bien été supprimée.');
 

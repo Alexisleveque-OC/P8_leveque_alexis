@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\UserRepository;
+use App\Service\User\RegisterService;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,31 +16,34 @@ class UserController extends AbstractController
 {
     /**
      * @Route("/users", name="user_list")
+     * @param UserRepository $userRepository
+     * @return Response
      */
-    public function listAction()
+    public function listUser(UserRepository $userRepository)
     {
-        return $this->render('user/list.html.twig', ['users' => $this->getDoctrine()->getRepository('AppBundle:User')->findAll()]);
+        $users = $userRepository->findAllUsers();
+
+        return $this->render('user/list.html.twig', [
+            'users' => $users
+        ]);
     }
 
     /**
      * @Route("/users/create", name="user_create")
      * @param Request $request
+     * @param RegisterService $registerService
      * @return RedirectResponse|Response
      */
-    public function createAction(Request $request)
+    public function createUser(Request $request, RegisterService $registerService)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
+        if ( $form->isSubmitted() && $form->isValid()) {
 
-            $em->persist($user);
-            $em->flush();
+            $registerService->registerUser($user);
 
             $this->addFlash('success', "L'utilisateur a bien été ajouté.");
 
@@ -54,17 +59,14 @@ class UserController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function editAction(User $user, Request $request)
+    public function editUser(User $user, Request $request, RegisterService $registerService)
     {
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
-
-            $this->getDoctrine()->getManager()->flush();
+        if ( $form->isSubmitted() && $form->isValid()) {
+            $registerService->registerUser();
 
             $this->addFlash('success', "L'utilisateur a bien été modifié");
 
