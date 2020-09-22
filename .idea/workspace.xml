@@ -11,12 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/TaskSaveService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/TaskRemoveService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Task/TaskRemoveService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/TaskSaveService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Task/TaskSaveService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,12 +152,16 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Security" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\p8_leveque_alexis\src\Service\Task" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\p8_leveque_alexis\src\Security" />
       <recent name="C:\wamp64\www\p8_leveque_alexis" />
     </key>
   </component>
@@ -176,7 +179,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600434399416</updated>
-      <workItem from="1600434400487" duration="8810000" />
+      <workItem from="1600434400487" duration="10073000" />
     </task>
     <task id="LOCAL-00001" summary="update application for use symfony 5 and php7.4 #1">
       <created>1600699853667</created>
@@ -192,7 +195,35 @@
       <option name="project" value="LOCAL" />
       <updated>1600776489756</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactor createTask ,Create Service SaveTaskService #1">
+      <created>1600776919124</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600776919124</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactor editTask ,use SaveTaskService #1">
+      <created>1600777047137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600777047137</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactor TaskController ,use SaveTaskService for toggle and RemoveTaskService for delete #1">
+      <created>1600777411247</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600777411247</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Create User Repository with function findAllUsers #1">
+      <created>1600777686287</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600777686287</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +243,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update application for use symfony 5 and php7.4 #1" />
     <MESSAGE value="Create Repository for find Task #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Repository for find Task #1" />
+    <MESSAGE value="Refactor createTask ,Create Service SaveTaskService #1" />
+    <MESSAGE value="Refactor editTask ,use SaveTaskService #1" />
+    <MESSAGE value="Refactor TaskController ,use SaveTaskService for toggle and RemoveTaskService for delete #1" />
+    <MESSAGE value="Create User Repository with function findAllUsers #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create User Repository with function findAllUsers #1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -223,6 +258,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600435709172" />
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600777484894">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600777484894" />
     <state x="616" y="422" key="ComposerInitDialogKey" timestamp="1600699611451">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -235,10 +274,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699688609" />
-    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1600776630129">
+    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1600777472061">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600776630129" />
+    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600777472061" />
     <state x="341" y="155" key="SettingsEditor" timestamp="1600434632690">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>

@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Service;
+namespace App\Service\Task;
 
 
 use App\Entity\Task;
 use Doctrine\ORM\EntityManagerInterface;
 
-class TaskSaveService
+class SaveService
 {
     /**
      * @var EntityManagerInterface

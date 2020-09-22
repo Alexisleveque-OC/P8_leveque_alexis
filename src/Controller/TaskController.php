@@ -5,14 +5,14 @@ namespace App\Controller;
 use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
-use App\Service\TaskFindService;
-use App\Service\TaskRemoveService;
-use App\Service\TaskSaveService;
+use App\Service\Task\Task\TaskFindService;
+use App\Service\Task\Task\RemoveService;
+use App\Service\Task\Task\TaskSaveService;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class TaskController extends AbstractController
 {
@@ -102,10 +102,10 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      * @param Task $task
-     * @param TaskRemoveService $taskRemoveService
+     * @param RemoveService $taskRemoveService
      * @return RedirectResponse
      */
-    public function deleteTaskAction(Task $task,TaskRemoveService $taskRemoveService)
+    public function deleteTaskAction(Task $task, RemoveService $taskRemoveService)
     {
         $taskRemoveService->removeTask($task);
 

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use App\Service\User\RegisterService;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,9 +31,10 @@ class UserController extends AbstractController
     /**
      * @Route("/users/create", name="user_create")
      * @param Request $request
+     * @param RegisterService $registerService
      * @return RedirectResponse|Response
      */
-    public function createUser(Request $request)
+    public function createUser(Request $request, RegisterService $registerService)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -40,12 +42,8 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
 
-            $em->persist($user);
-            $em->flush();
+            $registerService->registerUser($user);
 
             $this->addFlash('success', "L'utilisateur a bien été ajouté.");
 
@@ -61,17 +59,14 @@ class UserController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function editUser(User $user, Request $request)
+    public function editUser(User $user, Request $request, RegisterService $registerService)
     {
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() && $form->isValid()) {
-            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
-
-            $this->getDoctrine()->getManager()->flush();
+            $registerService->registerUser();
 
             $this->addFlash('success', "L'utilisateur a bien été modifié");
 

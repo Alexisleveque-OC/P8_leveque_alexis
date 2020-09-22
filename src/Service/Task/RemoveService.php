@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Service;
+namespace App\Service\Task\Task;
 
 
 use App\Entity\Task;
 use Doctrine\ORM\EntityManagerInterface;
 
-class TaskRemoveService
+class RemoveService
 {
     /**
      * @var EntityManagerInterface
