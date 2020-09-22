@@ -4,21 +4,21 @@
 namespace App\Repository;
 
 
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use App\Entity\Task;
 use Doctrine\Persistence\ManagerRegistry;
 
-class TaskRepository extends ServiceEntityRepository
+class UserRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Task::class);
+        parent::__construct($registry, User::class);
     }
 
-    public function findAllTasks()
+    public function findAllUsers()
     {
-        return $this->createQueryBuilder("t")
-            ->select('t.id')
+        return $this->createQueryBuilder("u")
+            ->select('u.id')
             ->getQuery()
             ->getSingleScalarResult();
     }
