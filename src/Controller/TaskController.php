@@ -6,6 +6,7 @@ use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
 use App\Service\TaskFindService;
+use App\Service\TaskSaveService;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,7 +20,7 @@ class TaskController extends AbstractController
      * @param TaskRepository $taskRepository
      * @return Response
      */
-    public function listAction(TaskRepository $taskRepository)
+    public function listTask(TaskRepository $taskRepository)
     {
         $tasks = $taskRepository->findAllTasks();
 
@@ -31,9 +32,10 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/create", name="task_create")
      * @param Request $request
+     * @param TaskSaveService $taskSaveService
      * @return RedirectResponse|Response
      */
-    public function createAction(Request $request)
+    public function createTask(Request $request, TaskSaveService $taskSaveService)
     {
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
@@ -41,10 +43,8 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
 
-            $em->persist($task);
-            $em->flush();
+            $taskSaveService->saveTask($task);
 
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
@@ -60,7 +60,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-    public function editAction(Task $task, Request $request)
+    public function editTask(Task $task, Request $request)
     {
         $form = $this->createForm(TaskType::class, $task);
 
@@ -85,7 +85,7 @@ class TaskController extends AbstractController
      * @param Task $task
      * @return RedirectResponse
      */
-    public function toggleTaskAction(Task $task)
+    public function toggleTask(Task $task)
     {
         $task->toggle(!$task->isDone());
         $this->getDoctrine()->getManager()->flush();

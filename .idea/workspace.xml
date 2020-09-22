@@ -11,10 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/TaskSaveService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
@@ -177,7 +176,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600434399416</updated>
-      <workItem from="1600434400487" duration="8494000" />
+      <workItem from="1600434400487" duration="8810000" />
     </task>
     <task id="LOCAL-00001" summary="update application for use symfony 5 and php7.4 #1">
       <created>1600699853667</created>
@@ -186,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600699853667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create Repository for find Task #1">
+      <created>1600776489756</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600776489756</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +211,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update application for use symfony 5 and php7.4 #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="update application for use symfony 5 and php7.4 #1" />
+    <MESSAGE value="Create Repository for find Task #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Repository for find Task #1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -228,10 +235,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699688609" />
-    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1600775359417">
+    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1600776630129">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600775359417" />
+    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600776630129" />
     <state x="341" y="155" key="SettingsEditor" timestamp="1600434632690">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -240,5 +247,9 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="432" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600700113377" />
+    <state x="557" y="281" key="refactoring.ChangeSignatureDialog" timestamp="1600776511303">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="557" y="281" key="refactoring.ChangeSignatureDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600776511303" />
   </component>
 </project>
