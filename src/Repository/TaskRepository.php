@@ -18,8 +18,8 @@ class TaskRepository extends ServiceEntityRepository
     public function findAllTasks()
     {
         return $this->createQueryBuilder("t")
-            ->select('t.id')
+            ->select()
             ->getQuery()
-            ->getSingleScalarResult();
+            ->getArrayResult();
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Service\Task\Task;
+namespace App\Service\Task;
 
 
 use App\Entity\Task;

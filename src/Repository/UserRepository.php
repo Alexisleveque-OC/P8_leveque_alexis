@@ -18,8 +18,8 @@ class UserRepository extends ServiceEntityRepository
     public function findAllUsers()
     {
         return $this->createQueryBuilder("u")
-            ->select('u.id')
+            ->select()
             ->getQuery()
-            ->getSingleScalarResult();
+            ->getArrayResult();
     }
 }

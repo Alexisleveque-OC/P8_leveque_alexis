@@ -5,9 +5,8 @@ namespace App\Controller;
 use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
-use App\Service\Task\Task\TaskFindService;
-use App\Service\Task\Task\RemoveService;
-use App\Service\Task\Task\TaskSaveService;
+use App\Service\Task\RemoveService;
+use App\Service\Task\SaveService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,10 +32,10 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/create", name="task_create")
      * @param Request $request
-     * @param TaskSaveService $taskSaveService
+     * @param SaveService $taskSaveService
      * @return RedirectResponse|Response
      */
-    public function createTask(Request $request, TaskSaveService $taskSaveService)
+    public function createTask(Request $request, SaveService $taskSaveService)
     {
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
@@ -59,17 +58,17 @@ class TaskController extends AbstractController
      * @Route("/tasks/{id}/edit", name="task_edit")
      * @param Task $task
      * @param Request $request
-     * @param TaskSaveService $taskSaveService
+     * @param SaveService $taskSaveService
      * @return RedirectResponse|Response
      */
-    public function editTask(Task $task, Request $request, TaskSaveService $taskSaveService)
+    public function editTask(Task $task, Request $request, SaveService $taskSaveService)
     {
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() && $form->isValid()) {
-            $taskSaveService->saveTask();
+            $taskSaveService->saveTask($task);
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');
 
@@ -85,10 +84,10 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/toggle", name="task_toggle")
      * @param Task $task
-     * @param TaskSaveService $taskSaveService
+     * @param SaveService $taskSaveService
      * @return RedirectResponse
      */
-    public function toggleTask(Task $task, TaskSaveService $taskSaveService)
+    public function toggleTask(Task $task,SaveService $taskSaveService)
     {
         $task->toggle(!$task->isDone());
 
