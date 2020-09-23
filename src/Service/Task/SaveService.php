@@ -21,6 +21,7 @@ class SaveService
 
     public function saveTask(Task $task)
     {
-
+        $this->manager->persist($task);
+        $this->manager->flush();
     }
 }
