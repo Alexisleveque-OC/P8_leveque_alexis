@@ -44,7 +44,9 @@ class TaskController extends AbstractController
 
         if ( $form->isSubmitted() && $form->isValid()) {
 
-            $taskSaveService->saveTask($task);
+            $user = $this->getUser();
+
+            $taskSaveService->saveTask($task, $user);
 
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
@@ -68,6 +70,7 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() && $form->isValid()) {
+
             $taskSaveService->saveTask($task);
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');

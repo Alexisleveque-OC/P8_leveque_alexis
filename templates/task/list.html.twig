@@ -20,7 +20,7 @@
                                 {% if task.user is null %}
                                     "anonyme"
                                 {% else %}
-                                    {{ task.user }}
+                                    {{ task.user.username }}
                                 {% endif %}
                             </strong>
                         </p>

@@ -5,6 +5,7 @@ namespace App\Service\Task;
 
 
 use App\Entity\Task;
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 
 class SaveService
@@ -19,8 +20,11 @@ class SaveService
         $this->manager = $manager;
     }
 
-    public function saveTask(Task $task)
+    public function saveTask(Task $task, User $user = null)
     {
+        if ($user){
+            $task->setUser($user);
+        }
         $this->manager->persist($task);
         $this->manager->flush();
     }
