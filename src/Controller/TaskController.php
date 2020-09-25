@@ -22,7 +22,7 @@ class TaskController extends AbstractController
      */
     public function listTask(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findAllTasksToDo();
+        $tasks = $taskRepository->findBy(["isDone"=>0]);
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
@@ -44,7 +44,9 @@ class TaskController extends AbstractController
 
         if ( $form->isSubmitted() && $form->isValid()) {
 
-            $taskSaveService->saveTask($task);
+            $user = $this->getUser();
+
+            $taskSaveService->saveTask($task, $user);
 
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
@@ -68,6 +70,7 @@ class TaskController extends AbstractController
         $form->handleRequest($request);
 
         if ( $form->isSubmitted() && $form->isValid()) {
+
             $taskSaveService->saveTask($task);
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');
@@ -120,7 +123,7 @@ class TaskController extends AbstractController
      */
     public function listTaskDone(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findAllTasksDone();
+        $tasks = $taskRepository->findBy(["isDone"=>1]);
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
