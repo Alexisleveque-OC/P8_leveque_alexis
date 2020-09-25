@@ -32,6 +32,11 @@ class AppFixtures extends Fixture
             $user->setPassword('coucou');
             $hash = $this->encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
+            $user->setRoles(['ROLE_USER']);
+
+            if ($i === 1){
+                $user->setRoles(['ROLE_ADMIN']);
+            }
 
             $manager->persist($user);
 
@@ -40,6 +45,13 @@ class AppFixtures extends Fixture
                 $task->setContent($faker->sentence);
                 $task->setTitle($faker->word);
                 $task->setCreatedAt(New \DateTime());
+
+                if ($j === 1 || $j === 2){
+                    $task->setUser($user);
+                }
+                if ($j === 2 || $j === 3){
+                    $task->toggle(!$task->isDone());
+                }
 
                 $manager->persist($task);
             }
