@@ -18,7 +18,7 @@ class TaskRepository extends ServiceEntityRepository
     public function findAllTasksToDo()
     {
         return $this->createQueryBuilder("t")
-            ->select()
+            ->select("t.user")
             ->where("t.isDone = 0")
             ->getQuery()
             ->getArrayResult();
