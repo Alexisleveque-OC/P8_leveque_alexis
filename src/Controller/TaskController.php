@@ -22,7 +22,7 @@ class TaskController extends AbstractController
      */
     public function listTask(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findAllTasks();
+        $tasks = $taskRepository->findAllTasksToDo();
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
@@ -111,5 +111,19 @@ class TaskController extends AbstractController
         $this->addFlash('success', 'La tâche a bien été supprimée.');
 
         return $this->redirectToRoute('task_list');
+    }
+
+    /**
+     * @Route("/tasks-done", name="task_done_list")
+     * @param TaskRepository $taskRepository
+     * @return Response
+     */
+    public function listTaskDone(TaskRepository $taskRepository)
+    {
+        $tasks = $taskRepository->findAllTasksDone();
+
+        return $this->render('task/list.html.twig', [
+            'tasks' => $tasks
+        ]);
     }
 }
