@@ -15,11 +15,20 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
-    public function findAllTasks()
+    public function findAllTasksToDo()
     {
         return $this->createQueryBuilder("t")
-            ->select('t.id')
+            ->select()
+            ->where("t.isDone = 0")
             ->getQuery()
-            ->getSingleScalarResult();
+            ->getArrayResult();
+    }
+    public function findAllTasksDone()
+    {
+        return $this->createQueryBuilder("t")
+            ->select()
+            ->where("t.isDone = 1")
+            ->getQuery()
+            ->getArrayResult();
     }
 }

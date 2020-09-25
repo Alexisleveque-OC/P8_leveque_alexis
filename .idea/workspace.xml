@@ -11,11 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/TaskRemoveService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Task/TaskRemoveService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/TaskSaveService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Task/TaskSaveService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +136,7 @@
       <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hgYrKyHsf62aqgzFjEHAMJdbbV" />
@@ -223,7 +223,28 @@
       <option name="project" value="LOCAL" />
       <updated>1600777686287</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixtures is ok #8">
+      <created>1600839034588</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600839034588</updated>
+    </task>
+    <task id="LOCAL-00008" summary="all fonctionality is ok #8 (connexion include)">
+      <created>1600847530306</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600847530306</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fictures is ok #8">
+      <created>1601037243387</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601037243387</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +268,10 @@
     <MESSAGE value="Refactor editTask ,use SaveTaskService #1" />
     <MESSAGE value="Refactor TaskController ,use SaveTaskService for toggle and RemoveTaskService for delete #1" />
     <MESSAGE value="Create User Repository with function findAllUsers #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create User Repository with function findAllUsers #1" />
+    <MESSAGE value="fixtures is ok #8" />
+    <MESSAGE value="all fonctionality is ok #8 (connexion include)" />
+    <MESSAGE value="fictures is ok #8" />
+    <option name="LAST_COMMIT_MESSAGE" value="fictures is ok #8" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -258,10 +282,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600435709172" />
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600777484894">
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600786091393">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600777484894" />
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600786091393" />
     <state x="616" y="422" key="ComposerInitDialogKey" timestamp="1600699611451">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -286,6 +310,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="432" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600700113377" />
+    <state x="547" y="243" width="585" height="534" key="find.popup" timestamp="1600847198551">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="547" y="243" width="585" height="534" key="find.popup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600847198551" />
     <state x="557" y="281" key="refactoring.ChangeSignatureDialog" timestamp="1600776511303">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
