@@ -12,8 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/User/RegisterService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/User/RegisterService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +154,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Security" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/développement/cours htmlcss/des petits rappels.html" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
@@ -257,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601041314716</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Modifying fixtures #8 and User for welcoming ROLES #4">
+      <created>1601042986173</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601042986173</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +296,8 @@
     <MESSAGE value="fictures is ok #8" />
     <MESSAGE value="display user or anonyme who had create task #3" />
     <MESSAGE value="User connected was reattach to task #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="User connected was reattach to task #3" />
+    <MESSAGE value="Modifying fixtures #8 and User for welcoming ROLES #4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifying fixtures #8 and User for welcoming ROLES #4" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -305,10 +316,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="616" y="422" key="ComposerInitDialogKey/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699611451" />
-    <state x="620" y="265" key="FileChooserDialogImpl" timestamp="1600434415831">
+    <state x="620" y="265" key="FileChooserDialogImpl" timestamp="1601296768260">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="620" y="265" key="FileChooserDialogImpl/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600434415831" />
+    <state x="620" y="265" key="FileChooserDialogImpl/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601296768260" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1600699688609">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
