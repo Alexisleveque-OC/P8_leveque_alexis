@@ -27,6 +27,9 @@ class RegisterService
 
     public function registerUser(User $user)
     {
+        if(empty($user->getRoles())){
+            $user->setRoles(['ROLE_USER']);
+        }
         $password = $this->encoder->encodePassword($user, $user->getPassword());
         $user->setPassword($password);
 
