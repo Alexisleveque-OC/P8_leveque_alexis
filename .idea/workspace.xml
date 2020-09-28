@@ -12,11 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/User/RegisterService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/User/RegisterService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601042986173</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Form for user creation welcoming ROLES and save it #4 and update User list templates for display roles clearly">
+      <created>1601298931466</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1601298931466</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +303,8 @@
     <MESSAGE value="display user or anonyme who had create task #3" />
     <MESSAGE value="User connected was reattach to task #3" />
     <MESSAGE value="Modifying fixtures #8 and User for welcoming ROLES #4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifying fixtures #8 and User for welcoming ROLES #4" />
+    <MESSAGE value="Form for user creation welcoming ROLES and save it #4 and update User list templates for display roles clearly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Form for user creation welcoming ROLES and save it #4 and update User list templates for display roles clearly" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -336,10 +343,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="432" y="243" key="Vcs.Push.Dialog.v2/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600700113377" />
-    <state x="547" y="243" width="585" height="534" key="find.popup" timestamp="1600847198551">
+    <state x="547" y="243" width="585" height="534" key="find.popup" timestamp="1601303972112">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="547" y="243" width="585" height="534" key="find.popup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600847198551" />
+    <state x="547" y="243" width="585" height="534" key="find.popup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601303972112" />
     <state x="557" y="281" key="refactoring.ChangeSignatureDialog" timestamp="1600776511303">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>

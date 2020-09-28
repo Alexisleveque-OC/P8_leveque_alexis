@@ -40,7 +40,14 @@
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-        <a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
+        {% if app.user %}
+            {% for  role in app.user.roles %}
+                {% if role == 'ROLE_ADMIN' %}
+                    <a href="{{ path('user_list') }}" class="btn btn-success">Gérer les utilisateurs</a>
+                    <a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
         {% if app.user %}
             <a href="{{ path('logout') }}" class="pull-right btn btn-danger">Se déconnecter</a>
