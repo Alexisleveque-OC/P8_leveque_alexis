@@ -23,7 +23,7 @@ class TaskController extends AbstractController
      */
     public function listTask(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findBy(["isDone"=>0]);
+        $tasks = $taskRepository->findAllTasksToDo();
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
@@ -63,6 +63,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @param SaveService $taskSaveService
      * @return RedirectResponse|Response
+     * @IsGranted("TASK_EDIT")
      */
     public function editTask(Task $task, Request $request, SaveService $taskSaveService)
     {
@@ -107,6 +108,8 @@ class TaskController extends AbstractController
      * @param Task $task
      * @param RemoveService $taskRemoveService
      * @return RedirectResponse
+     * @throws \Exception
+     * @IsGranted("TASK_DELETE",subject="task")
      */
     public function deleteTaskAction(Task $task, RemoveService $taskRemoveService)
     {
@@ -124,7 +127,7 @@ class TaskController extends AbstractController
      */
     public function listTaskDone(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findBy(["isDone"=>1]);
+        $tasks = $taskRepository->findAllTasksDone();
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
