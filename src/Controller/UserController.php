@@ -19,7 +19,7 @@ class UserController extends AbstractController
      * @Route("/users", name="user_list")
      * @param UserRepository $userRepository
      * @return Response
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("USER_LIST")
      */
     public function listUser(UserRepository $userRepository)
     {
@@ -35,7 +35,7 @@ class UserController extends AbstractController
      * @param Request $request
      * @param RegisterService $registerService
      * @return RedirectResponse|Response
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("USER_LIST")
      */
     public function createUser(Request $request, RegisterService $registerService)
     {
@@ -60,7 +60,7 @@ class UserController extends AbstractController
      * @param User $user
      * @param Request $request
      * @return RedirectResponse|Response
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("USER_EDIT",subject="user")
      */
     public function editUser(User $user, Request $request, RegisterService $registerService)
     {

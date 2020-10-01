@@ -63,7 +63,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @param SaveService $taskSaveService
      * @return RedirectResponse|Response
-     * @IsGranted("TASK_EDIT")
+     * @IsGranted("TASK_EDIT",subject="task")
      */
     public function editTask(Task $task, Request $request, SaveService $taskSaveService)
     {
