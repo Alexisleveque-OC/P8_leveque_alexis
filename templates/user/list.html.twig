@@ -33,7 +33,8 @@
                         <td>
                             {% for role in user.roles %}
                                 {% if role == 'ROLE_ADMIN' %}
-                                    <span class="glyphicon glyphicon-ok"></span>
+                                    <strong>Oui</strong>
+                                    <span class="glyphicon glyphicon-ok" ></span>
                                 {% endif %}
                             {% endfor %}
                         </td>

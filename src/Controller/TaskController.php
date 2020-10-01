@@ -7,6 +7,7 @@ use App\Form\TaskType;
 use App\Repository\TaskRepository;
 use App\Service\Task\RemoveService;
 use App\Service\Task\SaveService;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +23,7 @@ class TaskController extends AbstractController
      */
     public function listTask(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findBy(["isDone"=>0]);
+        $tasks = $taskRepository->findAllTasksToDo();
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
@@ -62,6 +63,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @param SaveService $taskSaveService
      * @return RedirectResponse|Response
+     * @IsGranted("TASK_EDIT",subject="task")
      */
     public function editTask(Task $task, Request $request, SaveService $taskSaveService)
     {
@@ -106,6 +108,8 @@ class TaskController extends AbstractController
      * @param Task $task
      * @param RemoveService $taskRemoveService
      * @return RedirectResponse
+     * @throws \Exception
+     * @IsGranted("TASK_DELETE",subject="task")
      */
     public function deleteTaskAction(Task $task, RemoveService $taskRemoveService)
     {
@@ -123,7 +127,7 @@ class TaskController extends AbstractController
      */
     public function listTaskDone(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findBy(["isDone"=>1]);
+        $tasks = $taskRepository->findAllTasksDone();
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks

@@ -28,7 +28,7 @@ class AppFixtures extends Fixture
         for ($i = 1; $i <= 5; $i++){
             $user = new User();
             $user->setUsername(sprintf('User%d', $i));
-            $user->setEmail(sprintf('User%d@gmail.com', $i));
+            $user->setEmail(sprintf('user%d@gmail.com', $i));
             $user->setPassword('coucou');
             $hash = $this->encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
