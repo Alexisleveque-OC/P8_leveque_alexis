@@ -23,7 +23,9 @@ class TaskController extends AbstractController
      */
     public function listTask(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findAllTasksToDo();
+        $user = $this->getUser();
+
+        $tasks = $taskRepository->findAllTasksToDoByUser($user);
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
@@ -127,7 +129,9 @@ class TaskController extends AbstractController
      */
     public function listTaskDone(TaskRepository $taskRepository)
     {
-        $tasks = $taskRepository->findAllTasksDone();
+        $user = $this->getUser();
+
+        $tasks = $taskRepository->findAllTasksDoneByUser($user);
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
