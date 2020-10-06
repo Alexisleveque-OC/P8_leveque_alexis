@@ -13,9 +13,7 @@
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601556031386</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="voter was created for UserController.php #5">
+      <created>1601558736010</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1601558736010</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +325,8 @@
     <MESSAGE value="Form for user creation welcoming ROLES and save it #4 and update User list templates for display roles clearly" />
     <MESSAGE value="Only admin can access to user management #5" />
     <MESSAGE value="voter was created for TaskController.php #5" />
-    <option name="LAST_COMMIT_MESSAGE" value="voter was created for TaskController.php #5" />
+    <MESSAGE value="voter was created for UserController.php #5" />
+    <option name="LAST_COMMIT_MESSAGE" value="voter was created for UserController.php #5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">

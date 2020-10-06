@@ -4,8 +4,9 @@
 namespace App\Repository;
 
 
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use App\Entity\Task;
+use App\Entity\User;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -16,35 +17,54 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
-    public function findAllTasksToDo()
+    public function findAllTasksToDoByUser(User $user)
     {
-        $qb = $this->getBaseQueryBuider();
+        $qb = $this->getBaseQueryBuilder();
         self::addDoneClause($qb, false);
-
+        self::addUserClause($qb, $user);
+//        if ($user->getRoles()[0] === 'ROLE_ADMIN') {
+//            self::addDoneClause($qb, false);
+//            self::addUserAdminClause($qb);
+//        }
+//        dd($qb->getQuery()->getResult());
         return $qb->getQuery()
             ->getResult();
 
-//        return $this->getBaseQueryBuider()
-//            ->where("t.isDone = 0")
-//            ->getQuery()
-//            ->getResult();
     }
-    public function findAllTasksDone()
+
+    public function findAllTasksDoneByUser(User $user)
     {
-        return $this->getBaseQueryBuider()
-            ->where("t.isDone = 1")
-            ->getQuery()
+        $qb = $this->getBaseQueryBuilder();
+        self::addDoneClause($qb, true);
+//        self::addUserClause($qb, $user);
+
+        return $qb->getQuery()
             ->getResult();
     }
 
-    protected  function getBaseQueryBuider(){
+    protected function getBaseQueryBuilder()
+    {
         return $this->createQueryBuilder("t")
             ->select('t, u')
             ->leftJoin('t.user', 'u');
     }
 
-    static function addDoneClause(QueryBuilder $qb, bool $isDone){
+    static function addDoneClause(QueryBuilder $qb, bool $isDone)
+    {
         return $qb->andWhere('t.isDone = :isDone')
             ->setParameter('isDone', $isDone);
     }
+
+    static function addUserClause(QueryBuilder $qb, User $user)
+    {
+        return $qb->andWhere('t.user = :user ')
+            ->setParameter('user', $user);
+    }
+
+    static function addUserAdminClause(QueryBuilder $qb)
+    {
+        return $qb->orWhere('t.user = :user')
+            ->setParameter('user', null);
+    }
+
 }
