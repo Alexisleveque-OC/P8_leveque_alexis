@@ -11,8 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Service/RegisterServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/User/RegisterService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/User/RegisterService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Service/Task/SaveServiceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Task/SaveService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Task/SaveService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Service/RegisterServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Service/User/RegisterServiceTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +159,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\p8_leveque_alexis\tests\Service\User" />
       <recent name="C:\wamp64\www\p8_leveque_alexis\src\Service\Task" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -313,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602240070374</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="RegisterServiceTest.php is ok #6">
+      <created>1602241113989</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1602241113989</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +359,8 @@
     <MESSAGE value="voter was created for UserController.php #5" />
     <MESSAGE value="search Task by User ok but if admin display anonyme doesn't work #10" />
     <MESSAGE value="SmokeTest is ok #6" />
-    <option name="LAST_COMMIT_MESSAGE" value="SmokeTest is ok #6" />
+    <MESSAGE value="RegisterServiceTest.php is ok #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="RegisterServiceTest.php is ok #6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -360,10 +371,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601969440349" />
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601970379664">
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602241267667">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601970379664" />
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602241267667" />
     <state x="616" y="422" key="ComposerInitDialogKey" timestamp="1600699611451">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -376,10 +387,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699688609" />
-    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1602240295317">
+    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1602241239135">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602240295317" />
+    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602241239135" />
     <state x="341" y="155" key="SettingsEditor" timestamp="1600434632690">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>

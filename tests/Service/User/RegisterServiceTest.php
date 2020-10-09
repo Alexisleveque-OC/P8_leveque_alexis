@@ -44,5 +44,6 @@ class RegisterServiceTest extends TestCase
 
         $this->assertEquals($test->getUsername(),'toto');
         $this->assertEquals($test->getRoles()[0],'ROLE_USER');
+        $this->assertInstanceOf(User::class, $test);
     }
 }
