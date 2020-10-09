@@ -11,10 +11,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Service/Task/SaveServiceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Controller/UserControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Task/SaveService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Task/SaveService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Service/RegisterServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Service/User/RegisterServiceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Controller/DefaultController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Controller/DefaultController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Controller/SecurityController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Controller/SecurityController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Controller/TaskController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Controller/TaskController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Controller/UserController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Controller/UserController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Controller/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Controller/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Form/TaskType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Form/TaskType.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Form/UserType.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Form/UserType.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Form/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Form/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Form/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Form/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Kernel.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Kernel.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Repository/TaskRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Repository/TaskRepository.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Repository/UserRepository.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Repository/UserRepository.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Repository/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Repository/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Repository/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Security/LoginFormAuthenticator.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Security/LoginFormAuthenticator.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Security/Voter/TaskVoter.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Security/Voter/TaskVoter.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Security/Voter/UserVoter.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Security/Voter/UserVoter.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Security/Voter/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Security/Voter/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Security/Voter/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Security/Voter/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Security/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Security/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Security/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Security/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/Task/RemoveService.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/Task/RemoveService.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/Task/SaveService.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/Task/SaveService.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/Task/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/Task/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/Task/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/Task/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/User/RegisterService.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/User/RegisterService.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/User/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/User/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/User/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/User/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/Service/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/Service/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test-coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/test-coverage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/create.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602241113989</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="SaveServiceTest.php is ok #6">
+      <created>1602242340700</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1602242340700</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +400,8 @@
     <MESSAGE value="search Task by User ok but if admin display anonyme doesn't work #10" />
     <MESSAGE value="SmokeTest is ok #6" />
     <MESSAGE value="RegisterServiceTest.php is ok #6" />
-    <option name="LAST_COMMIT_MESSAGE" value="RegisterServiceTest.php is ok #6" />
+    <MESSAGE value="SaveServiceTest.php is ok #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="SaveServiceTest.php is ok #6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -371,26 +412,26 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601969440349" />
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602241267667">
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602246028570">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602241267667" />
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602246028570" />
     <state x="616" y="422" key="ComposerInitDialogKey" timestamp="1600699611451">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="616" y="422" key="ComposerInitDialogKey/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699611451" />
-    <state x="620" y="265" key="FileChooserDialogImpl" timestamp="1602086048069">
+    <state x="620" y="265" key="FileChooserDialogImpl" timestamp="1602244478844">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="620" y="265" key="FileChooserDialogImpl/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602086048069" />
+    <state x="620" y="265" key="FileChooserDialogImpl/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602244478844" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1600699688609">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699688609" />
-    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1602241239135">
+    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1602244547026">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602241239135" />
+    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602244547026" />
     <state x="341" y="155" key="SettingsEditor" timestamp="1600434632690">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
