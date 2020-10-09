@@ -33,11 +33,6 @@ class UserType extends AbstractType
                     ]
                 ]
             )
-//            ->add('roles', ChoiceType::class,[
-//                'choices' => [
-//                    "ROLE_USER" => false,
-//                    "ROLE_ADMIN" => true]
-//                ])
         ;
     }
 }

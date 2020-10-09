@@ -25,6 +25,34 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
 
+        $admin = new User();
+        $admin->setUsername('Admin');
+        $admin->setEmail('admin@gmail.com');
+        $admin->setPassword('admin');
+        $hash = $this->encoder->encodePassword($admin, $admin->getPassword());
+        $admin->setPassword($hash);
+        $admin->setRoles(['ROLE_ADMIN']);
+
+        $manager->persist($admin);
+
+        for ($k=1; $k<=5 ; $k++){
+            $task = new Task();
+            $task->setContent($faker->sentence);
+            $task->setTitle($faker->word);
+            $task->setCreatedAt(New \DateTime());
+
+            if ($k <= 3){
+                $task->setUser($admin);
+            }
+            if ($k >= 2 && $k <=4){
+                $task->toggle(!$task->isDone());
+            }
+
+            $manager->persist($task);
+        }
+
+
+
         for ($i = 1; $i <= 5; $i++){
             $user = new User();
             $user->setUsername(sprintf('User%d', $i));
@@ -34,10 +62,6 @@ class AppFixtures extends Fixture
             $user->setPassword($hash);
             $user->setRoles(['ROLE_USER']);
 
-            if ($i === 1){
-                $user->setRoles(['ROLE_ADMIN']);
-            }
-
             $manager->persist($user);
 
             for ($j=1; $j<=5 ; $j++){
@@ -46,10 +70,10 @@ class AppFixtures extends Fixture
                 $task->setTitle($faker->word);
                 $task->setCreatedAt(New \DateTime());
 
-                if ($j === 1 || $j === 2){
+                if ($j <= 3){
                     $task->setUser($user);
                 }
-                if ($j === 2 || $j === 3){
+                if ($j >= 2 && $j <=4){
                     $task->toggle(!$task->isDone());
                 }
 

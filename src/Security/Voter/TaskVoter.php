@@ -13,6 +13,8 @@ class TaskVoter extends Voter
 
     const TASK_DELETE = "TASK_DELETE";
     const TASK_EDIT = "TASK_EDIT";
+    const TASK_LIST = "TASK_LIST";
+    const TASK_CREATE = "TASK_CREATE";
 
     /**
      * @var Security
@@ -26,8 +28,9 @@ class TaskVoter extends Voter
 
     protected function supports($attribute, $subject)
     {
-        return in_array($attribute, [self::TASK_DELETE, self::TASK_EDIT])
-            && $subject instanceof Task;
+        return in_array($attribute, [self::TASK_LIST, self::TASK_CREATE]) ||
+            (in_array($attribute, [self::TASK_DELETE, self::TASK_EDIT])
+                && $subject instanceof Task);
     }
 
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
@@ -36,14 +39,18 @@ class TaskVoter extends Voter
         if (!$user instanceof UserInterface) {
             return false;
         }
-
+//dd($attribute);
         switch ($attribute) {
-            case (self::TASK_DELETE || self::TASK_EDIT):
-                return   $subject->getUser() === $user ||
-                    ($subject->getUser() == null  &&  $this->security->isGranted("ROLE_ADMIN")) ;
+            case self::TASK_CREATE:
+            case self::TASK_LIST :
+                    return $token->getUser();
+                break;
+            case self::TASK_EDIT:
+            case self::TASK_DELETE:
+                return ($subject->getUser() === $user && $subject->getUser() !== null) ||
+                    ($subject->getUser() === null && $this->security->isGranted("ROLE_ADMIN"));
                 break;
         }
-
         return false;
     }
 }

@@ -11,9 +11,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/Controller/SmokeTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/p8_leveque_alexis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/p8_leveque_alexis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/Voter/TaskVoter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Voter/TaskVoter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +151,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/dama/doctrine-test-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hgYrKyHsf62aqgzFjEHAMJdbbV" />
@@ -292,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601558736010</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="search Task by User ok but if admin display anonyme doesn't work #10">
+      <created>1601967919484</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1601967919484</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,37 +349,38 @@
     <MESSAGE value="Only admin can access to user management #5" />
     <MESSAGE value="voter was created for TaskController.php #5" />
     <MESSAGE value="voter was created for UserController.php #5" />
-    <option name="LAST_COMMIT_MESSAGE" value="voter was created for UserController.php #5" />
+    <MESSAGE value="search Task by User ok but if admin display anonyme doesn't work #10" />
+    <option name="LAST_COMMIT_MESSAGE" value="search Task by User ok but if admin display anonyme doesn't work #10" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699724215" />
-    <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600435709172">
+    <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601969440349">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600435709172" />
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600786091393">
+    <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601969440349" />
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601970379664">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600786091393" />
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601970379664" />
     <state x="616" y="422" key="ComposerInitDialogKey" timestamp="1600699611451">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="616" y="422" key="ComposerInitDialogKey/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699611451" />
-    <state x="620" y="265" key="FileChooserDialogImpl" timestamp="1601296768260">
+    <state x="620" y="265" key="FileChooserDialogImpl" timestamp="1602086048069">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="620" y="265" key="FileChooserDialogImpl/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601296768260" />
+    <state x="620" y="265" key="FileChooserDialogImpl/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602086048069" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1600699688609">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699688609" />
-    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1600777472061">
+    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1601970343375">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600777472061" />
+    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601970343375" />
     <state x="341" y="155" key="SettingsEditor" timestamp="1600434632690">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
