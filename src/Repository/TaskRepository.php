@@ -17,26 +17,35 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
-    public function findAllTasksToDoByUser(User $user)
+    public function findAllTasksToDoByUser(User $user, $withAnonymous = false)
     {
         $qb = $this->getBaseQueryBuilder();
         self::addDoneClause($qb, false);
-        self::addUserClause($qb, $user);
-//        if ($user->getRoles()[0] === 'ROLE_ADMIN') {
-//            self::addDoneClause($qb, false);
-//            self::addUserAdminClause($qb);
-//        }
-//        dd($qb->getQuery()->getResult());
+
+        if ($withAnonymous) {
+            self::addUserAndAnonymousClause($qb, $user);
+
+        } else {
+            self::addUserClause($qb, $user);
+
+        }
         return $qb->getQuery()
             ->getResult();
 
     }
 
-    public function findAllTasksDoneByUser(User $user)
+    public function findAllTasksDoneByUser(User $user, $withAnonymous = false)
     {
         $qb = $this->getBaseQueryBuilder();
         self::addDoneClause($qb, true);
-//        self::addUserClause($qb, $user);
+
+        if ($withAnonymous) {
+            self::addUserAndAnonymousClause($qb, $user);
+
+        } else {
+            self::addUserClause($qb, $user);
+
+        }
 
         return $qb->getQuery()
             ->getResult();
@@ -61,10 +70,10 @@ class TaskRepository extends ServiceEntityRepository
             ->setParameter('user', $user);
     }
 
-    static function addUserAdminClause(QueryBuilder $qb)
+    static function addUserAndAnonymousClause(QueryBuilder $qb, User $user)
     {
-        return $qb->orWhere('t.user = :user')
-            ->setParameter('user', null);
+        return $qb->andWhere('t.user = :user OR t.user IS NULL')
+            ->setParameter('user', $user);
     }
 
 }

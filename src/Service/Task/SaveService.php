@@ -22,10 +22,12 @@ class SaveService
 
     public function saveTask(Task $task, User $user = null)
     {
-        if ($user){
-            $task->setUser($user);
-        }
+
+        $task->setUser($user);
+
         $this->manager->persist($task);
         $this->manager->flush();
+
+        return $task;
     }
 }

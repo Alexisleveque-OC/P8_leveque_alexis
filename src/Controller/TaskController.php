@@ -13,19 +13,22 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 class TaskController extends AbstractController
 {
     /**
      * @Route("/tasks", name="task_list")
      * @param TaskRepository $taskRepository
+     * @param Security $security
      * @return Response
+     * @IsGranted ("TASK_LIST")
      */
-    public function listTask(TaskRepository $taskRepository)
+    public function listTask(TaskRepository $taskRepository, Security  $security)
     {
         $user = $this->getUser();
 
-        $tasks = $taskRepository->findAllTasksToDoByUser($user);
+        $tasks = $taskRepository->findAllTasksToDoByUser($user, $security->isGranted("ROLE_ADMIN"));
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
@@ -37,6 +40,7 @@ class TaskController extends AbstractController
      * @param Request $request
      * @param SaveService $taskSaveService
      * @return RedirectResponse|Response
+     * @IsGranted("TASK_CREATE")
      */
     public function createTask(Request $request, SaveService $taskSaveService)
     {
@@ -93,6 +97,7 @@ class TaskController extends AbstractController
      * @param Task $task
      * @param SaveService $taskSaveService
      * @return RedirectResponse
+     * @IsGranted("TASK_EDIT", subject="task")
      */
     public function toggleTask(Task $task,SaveService $taskSaveService)
     {
@@ -125,13 +130,15 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks-done", name="task_done_list")
      * @param TaskRepository $taskRepository
+     * @param Security $security
      * @return Response
+     * @IsGranted ("TASK_LIST")
      */
-    public function listTaskDone(TaskRepository $taskRepository)
+    public function listTaskDone(TaskRepository $taskRepository, Security $security)
     {
         $user = $this->getUser();
 
-        $tasks = $taskRepository->findAllTasksDoneByUser($user);
+        $tasks = $taskRepository->findAllTasksDoneByUser($user, $security->isGranted("ROLE_ADMIN"));
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks

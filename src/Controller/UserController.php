@@ -35,7 +35,7 @@ class UserController extends AbstractController
      * @param Request $request
      * @param RegisterService $registerService
      * @return RedirectResponse|Response
-     * @IsGranted("USER_LIST")
+     * @IsGranted("USER_CREATE")
      */
     public function createUser(Request $request, RegisterService $registerService)
     {

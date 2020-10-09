@@ -37,7 +37,9 @@
                             <div class="row">
                             <form action="{{ path('task_toggle', {'id' : task.id }) }}">
                                 <button class="btn btn-success btn-sm ">
-                                    {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
+                                    {% if is_granted('TASK_EDIT', task) %}
+                                        {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
+                                    {% endif %}
                                 </button>
                             </form>
                             {% if is_granted('TASK_DELETE', task) %}
