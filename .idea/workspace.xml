@@ -11,24 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Controller/SmokeTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/p8_leveque_alexis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/p8_leveque_alexis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TaskRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/Voter/TaskVoter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Voter/TaskVoter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/list.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Service/RegisterServiceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/User/RegisterService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/User/RegisterService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,7 +299,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601967919484</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="SmokeTest is ok #6">
+      <created>1602240013290</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1602240013290</updated>
+    </task>
+    <task id="LOCAL-00019" summary="SmokeTest is ok #6">
+      <created>1602240070374</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1602240070374</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +348,8 @@
     <MESSAGE value="voter was created for TaskController.php #5" />
     <MESSAGE value="voter was created for UserController.php #5" />
     <MESSAGE value="search Task by User ok but if admin display anonyme doesn't work #10" />
-    <option name="LAST_COMMIT_MESSAGE" value="search Task by User ok but if admin display anonyme doesn't work #10" />
+    <MESSAGE value="SmokeTest is ok #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="SmokeTest is ok #6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -377,10 +376,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699688609" />
-    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1601970343375">
+    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1602240295317">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601970343375" />
+    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602240295317" />
     <state x="341" y="155" key="SettingsEditor" timestamp="1600434632690">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -393,10 +392,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="547" y="243" width="585" height="534" key="find.popup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601303972112" />
-    <state x="557" y="281" key="refactoring.ChangeSignatureDialog" timestamp="1600776511303">
+    <state x="557" y="281" key="refactoring.ChangeSignatureDialog" timestamp="1602240423207">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="557" y="281" key="refactoring.ChangeSignatureDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600776511303" />
+    <state x="557" y="281" key="refactoring.ChangeSignatureDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602240423207" />
     <state x="503" y="220" width="672" height="678" key="search.everywhere.popup" timestamp="1601370848084">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
