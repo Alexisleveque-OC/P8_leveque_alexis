@@ -16,8 +16,8 @@ class UserControllerTest extends WebTestCase
         $client = $this->CreateClient();
 
         $userRepository = static::$container->get(UserRepository::class);
-        $adminTest = $userRepository->findOneBy(['username' => 'Admin']);
-        $client->loginUser($adminTest);
+        $admin = $userRepository->findOneBy(['username' => 'Admin']);
+        $client->loginUser($admin);
 
         $crawler = $client->request('GET', '/users/create');
 
@@ -43,8 +43,8 @@ class UserControllerTest extends WebTestCase
         $client = $this->CreateClient();
 
         $userRepository = static::$container->get(UserRepository::class);
-        $adminTest = $userRepository->findOneBy(['username' => 'Admin']);
-        $client->loginUser($adminTest);
+        $admin = $userRepository->findOneBy(['username' => 'Admin']);
+        $client->loginUser($admin);
 
         $crawler = $client->request('GET', '/users/2/edit');
 

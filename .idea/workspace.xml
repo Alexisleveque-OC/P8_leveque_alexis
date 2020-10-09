@@ -11,9 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e439440d-0477-4948-b0a6-7c8fd4e7ea31" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/Controller/TaskControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Controller/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Controller/UserControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -337,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602246699147</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="testEditUser is ok #6">
+      <created>1602247812712</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1602247812712</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +384,8 @@
     <MESSAGE value="RegisterServiceTest.php is ok #6" />
     <MESSAGE value="SaveServiceTest.php is ok #6" />
     <MESSAGE value="testUserCreation is ok #6" />
-    <option name="LAST_COMMIT_MESSAGE" value="testUserCreation is ok #6" />
+    <MESSAGE value="testEditUser is ok #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="testEditUser is ok #6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600699724215">
@@ -387,10 +396,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="596" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1601969440349" />
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602246028570">
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602247909780">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602246028570" />
+    <state x="570" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602247909780" />
     <state x="616" y="422" key="ComposerInitDialogKey" timestamp="1600699611451">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
@@ -403,10 +412,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1600699688609" />
-    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1602244547026">
+    <state x="600" y="324" key="NewPhpClassDialog" timestamp="1602247862205">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602244547026" />
+    <state x="600" y="324" key="NewPhpClassDialog/0.0.1680.1020/1680.0.1440.870@0.0.1680.1020" timestamp="1602247862205" />
     <state x="341" y="155" key="SettingsEditor" timestamp="1600434632690">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
