@@ -39,7 +39,6 @@ class TaskVoter extends Voter
         if (!$user instanceof UserInterface) {
             return false;
         }
-//dd($attribute);
         switch ($attribute) {
             case self::TASK_CREATE:
             case self::TASK_LIST :

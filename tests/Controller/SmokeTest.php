@@ -41,18 +41,6 @@ class SmokeTest extends WebTestCase
 
     public function provideUrls()
     {
-        //login
-//        logout
-//        tasks
-//        /tasks-done
-//        tasks/create
-//        tasks/id/edit
-//        tasks/id/toggle
-//        tasks/id/delete
-//        /users
-//        /users/create
-//        /users/id/edit
-
         yield['homepage', '/' ];
         yield['homepage', '/', 'GET', 200, 'Admin'];
         yield['homepage', '/', 'GET', 200, 'User1'];

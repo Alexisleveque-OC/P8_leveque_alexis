@@ -1,20 +1,20 @@
 List of Paths
 =============
 
-|Action|Path|Description|Security|
-|------|----|-----------|--------|
-|[homepage]()|/|Display the Homepage|Anonymous|
-|[login]()|/login|Display the form Login|Anonymous|
-|[logout]()|/logout|Disconnect user connected|Authenticated|
-|[task_list]()|/tasks|Display the list of all tasks "to do" link to user and anonymous if admin|Authenticated|
-|[task_done]()|/tasks|Display the list of all tasks "done" link to user and anonymous if admin|Authenticated|
-|[task_create]()|/tasks/create|Used to create a new Task|Authenticated|
-|[task_edit]()|/tasks/{id}/edit|Used to edit an existing task|Authenticated and Owner of task or admin if task is anonymous|
-|[task_toggle]()|/tasks/{id}/toggle|Mark the task done|Authenticated and Owner of the task or admin if task is anonymous|
-|[task_delete]()|/tasks/{id}/delete|Delete the task|Authenticated and Owner of task or admin if task is anonymous|
-|[user_list]()|/users|Display the list of users|Authenticated and Admin|
-|[user_create]()|/users/create|Used to create a new User|Authenticated and Admin|
-|[user_edit]()|/users/{id}/edit|Used to edit an existing User|Authenticated and Admin|
+|Controller|Route's name|Path|Description|Security|
+|----------|------------|----|-----------|--------|
+|DefaultController|homepage|/|Display the Homepage|Anonymous|
+|SecurityController|login|/login|Display the form Login|Anonymous|
+|SecurityController|logout|/logout|Disconnect user connected|Authenticated|
+|TaskController|task_list|/tasks|Display the list of all tasks "to do" link to user and anonymous if admin|Authenticated|
+|TaskController|task_done_list|/tasks/dones|Display the list of all tasks "done" link to user and anonymous if admin|Authenticated|
+|TaskController|task_create|/tasks/create|Used to create a new Task|Authenticated|
+|TaskController|task_edit|/tasks/{id}/edit|Used to edit an existing task|Authenticated and Owner of task or admin if task is anonymous|
+|TaskController|task_toggle|/tasks/{id}/toggle|Mark the task done|Authenticated and Owner of the task or admin if task is anonymous|
+|TaskController|task_delete|/tasks/{id}/delete|Delete the task|Authenticated and Owner of task or admin if task is anonymous|
+|UserController|user_list|/users|Display the list of users|Authenticated and Admin|
+|UserController|user_create|/users/create|Used to create a new User|Authenticated and Admin|
+|UserController|user_edit|/users/{id}/edit|Used to edit an existing User|Authenticated and Admin|
 
 
 Controllers
