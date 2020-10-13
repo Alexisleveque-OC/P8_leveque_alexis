@@ -41,18 +41,6 @@ class SmokeTest extends WebTestCase
 
     public function provideUrls()
     {
-        //login
-//        logout
-//        tasks
-//        /tasks-done
-//        tasks/create
-//        tasks/id/edit
-//        tasks/id/toggle
-//        tasks/id/delete
-//        /users
-//        /users/create
-//        /users/id/edit
-
         yield['homepage', '/' ];
         yield['homepage', '/', 'GET', 200, 'Admin'];
         yield['homepage', '/', 'GET', 200, 'User1'];
@@ -65,9 +53,9 @@ class SmokeTest extends WebTestCase
         yield['task_list', '/tasks', 'GET', 302];
         yield['task_list', '/tasks', 'GET', 200, 'Admin'];
         yield['task_list', '/tasks', 'GET', 200, 'User1'];
-        yield['task_list', '/tasks-done', 'GET', 302];
-        yield['task_list', '/tasks-done', 'GET', 200, 'Admin'];
-        yield['task_list', '/tasks-done', 'GET', 200, 'User1'];
+        yield['task_list', '/tasks/done', 'GET', 302];
+        yield['task_list', '/tasks/done', 'GET', 200, 'Admin'];
+        yield['task_list', '/tasks/done', 'GET', 200, 'User1'];
         yield['task_create', '/tasks/create','GET',302];
         yield['task_create', '/tasks/create', 'GET', 200, 'Admin'];
         yield['task_create', '/tasks/create', 'GET', 200, 'User1'];

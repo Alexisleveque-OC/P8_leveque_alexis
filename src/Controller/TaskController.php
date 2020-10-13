@@ -36,6 +36,24 @@ class TaskController extends AbstractController
     }
 
     /**
+     * @Route("/tasks/done", name="task_done_list")
+     * @param TaskRepository $taskRepository
+     * @param Security $security
+     * @return Response
+     * @IsGranted ("TASK_LIST")
+     */
+    public function listTaskDone(TaskRepository $taskRepository, Security $security)
+    {
+        $user = $this->getUser();
+
+        $tasks = $taskRepository->findAllTasksDoneByUser($user, $security->isGranted("ROLE_ADMIN"));
+
+        return $this->render('task/list.html.twig', [
+            'tasks' => $tasks
+        ]);
+    }
+
+    /**
      * @Route("/tasks/create", name="task_create")
      * @param Request $request
      * @param SaveService $taskSaveService
@@ -125,23 +143,5 @@ class TaskController extends AbstractController
         $this->addFlash('success', 'La tâche a bien été supprimée.');
 
         return $this->redirectToRoute('task_list');
-    }
-
-    /**
-     * @Route("/tasks-done", name="task_done_list")
-     * @param TaskRepository $taskRepository
-     * @param Security $security
-     * @return Response
-     * @IsGranted ("TASK_LIST")
-     */
-    public function listTaskDone(TaskRepository $taskRepository, Security $security)
-    {
-        $user = $this->getUser();
-
-        $tasks = $taskRepository->findAllTasksDoneByUser($user, $security->isGranted("ROLE_ADMIN"));
-
-        return $this->render('task/list.html.twig', [
-            'tasks' => $tasks
-        ]);
     }
 }
