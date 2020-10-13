@@ -22,8 +22,9 @@ class SaveService
 
     public function saveTask(Task $task, User $user = null)
     {
-
-        $task->setUser($user);
+        if ($user !== null) {
+            $task->setUser($user);
+        }
 
         $this->manager->persist($task);
         $this->manager->flush();
