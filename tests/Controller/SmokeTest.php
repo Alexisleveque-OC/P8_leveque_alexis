@@ -53,9 +53,9 @@ class SmokeTest extends WebTestCase
         yield['task_list', '/tasks', 'GET', 302];
         yield['task_list', '/tasks', 'GET', 200, 'Admin'];
         yield['task_list', '/tasks', 'GET', 200, 'User1'];
-        yield['task_list', '/tasks-done', 'GET', 302];
-        yield['task_list', '/tasks-done', 'GET', 200, 'Admin'];
-        yield['task_list', '/tasks-done', 'GET', 200, 'User1'];
+        yield['task_list', '/tasks/done', 'GET', 302];
+        yield['task_list', '/tasks/done', 'GET', 200, 'Admin'];
+        yield['task_list', '/tasks/done', 'GET', 200, 'User1'];
         yield['task_create', '/tasks/create','GET',302];
         yield['task_create', '/tasks/create', 'GET', 200, 'Admin'];
         yield['task_create', '/tasks/create', 'GET', 200, 'User1'];

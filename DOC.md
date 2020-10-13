@@ -52,6 +52,8 @@ If you want to create a new entity, you can use the maker :
 php bin/console make:entity
 ```
 
+Control or create some fixtures in __src/DataFixtures/appFixtures.php__ for work in good conditions.
+
 When your new Entity is created, you must update your database.
 For this enter in console :
 
@@ -66,7 +68,7 @@ php bin/console d:d:drop --if-exists -f
 && php bin/console d:s:update -f
 && php bin/console d:fixtures:load -n
 ```
-- first command: Delete Database on your machine
+- first command: Delete Database on your machine if exists
 - second one: Create new Database with old(s) and new(s) Entity
 - third one: Update schema, create all tables and Column for each Entity
 - fourth one: load fixtures
@@ -80,14 +82,15 @@ Repositories are the tool used in symfony to request your database.
 Every repository is linked to an Entity.
 Ex : with the __Article__ Entity you'll have the __ArticleRepository__.
 
-#### good practices
+## good practices
 You can create your own request using the QueryBuilder in the repository file. 
-[See TaskRepository for follow example](https://github.com/Alexisleveque-OC/P8_leveque_alexis/blob/master/src/Repository/TaskRepository.php)
+See [TaskRepository](https://github.com/Alexisleveque-OC/P8_leveque_alexis/blob/master/src/Repository/TaskRepository.php) for follow example
 
-- in a first time : Create function getBaseQueryBuilder this one select Table which you want to work and joined table.
+- in a first time : Create function getBaseQueryBuilder this one select Table which you want to work and joined table if it's necessary.
 ````php
 protected function getBaseQueryBuilder()
     {
+            // here "t" is Task and "u" is User
         return $this->createQueryBuilder("t")
             ->select('t, u')
             ->leftJoin('t.user', 'u');
@@ -101,7 +104,7 @@ static function addDoneClause(QueryBuilder $qb, bool $isDone)
             ->setParameter('isDone', $isDone);
     }
 ````
-- for finish : create your function with a name as precise as possible (ex: 'FindOneByUser'). For construct your function,
+- for finish : create your function with a name as precise as possible (ex: 'FindUserWhoHaveOneTask'). For construct your function,
  get your baseQueryBuilder -> add somme clause -> return result
 ````php
 public function findAllTasksDoneByUser(User $user, $withAnonymous = false)
@@ -116,7 +119,7 @@ public function findAllTasksDoneByUser(User $user, $withAnonymous = false)
            }
 ````
 
-#### bad practices
+## bad practices
 With repositories, you can use magical function that are already created lile __findAll()__. 
 
 You can have more informations in the Documentation Here :
@@ -161,12 +164,25 @@ Authorization
 =============
 
 The Authorization for access to some Routes must be passed with a voter. 
-For example, for access to the "task_list", the user must be connected. See [TaskController](https://github.com/Alexisleveque-OC/P8_leveque_alexis/blob/master/src/Controller/TaskController.php) for follow.
+For example, for access to the "task_list", the user must be connected. 
+
+See [TaskController](https://github.com/Alexisleveque-OC/P8_leveque_alexis/blob/master/src/Controller/TaskController.php) for follow.
+````php
+/**
+     * @Route("/tasks", name="task_list")
+     * @param TaskRepository $taskRepository
+     * @param Security $security
+     * @return Response
+     * @IsGranted ("TASK_LIST")
+     */
+    public function listTask(TaskRepository $taskRepository, Security  $security)
+    {...}
+````
 The annotation @IsGranted("TASK_LIST"), call the TaskVoter (in __src/Security/Voter/TaskVoter.php__).
 This one check if the attribute is configure with the "protected function supports" and check if user can continue with the "protected function voteOnAttribute".
 
 For configure new access control check [documentation](https://symfony.com/doc/current/security/voters.html).
-Be careful if you want denied access to an entity in particular, you must inquire a subject in your annotation and configure it in Voter.
+Be careful if you want denied access to an entity in particular, you must inject a subject in your annotation and configure it in the Voter.
 
 Authentication and Users
 ========================
