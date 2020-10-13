@@ -120,7 +120,7 @@ public function findAllTasksDoneByUser(User $user, $withAnonymous = false)
 ````
 
 ## bad practices
-With repositories, you can use magical function that are already created lile __findAll()__. 
+With repositories, you can use magical function that are already created like __findAll()__. 
 
 You can have more informations in the Documentation Here :
 [Doctrine Documentation](https://symfony.com/doc/current/doctrine.html)

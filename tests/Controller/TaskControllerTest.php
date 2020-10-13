@@ -36,7 +36,7 @@ class TaskControllerTest extends WebTestCase
         $this->assertInstanceOf(Task::class,$taskTest);
         $this->assertInstanceOf(User::class,$taskTest->getUser());
         $this->assertSame('TitleTest',$taskTest->getTitle());
-//        $this->assertSame($user,$taskTest->getUser());
+        $this->assertEquals($user->getId(),$taskTest->getUser()->getId());
 
     }
 
@@ -63,9 +63,11 @@ class TaskControllerTest extends WebTestCase
 
         $taskAfter = $taskRepository->findOneBy(['id' => '6']);
 
+
         $this->assertInstanceOf(Task::class,$taskAfter);
-//        $this->assertInstanceOf(User::class,$taskAfter->getUser());
+        $this->assertInstanceOf(User::class,$taskAfter->getUser());
         $this->assertSame('TitleTest',$taskAfter->getTitle());
+        $this->assertSame('ContentTest',$taskAfter->getContent());
         $this->assertNotSame($taskBefore->getTitle(), $taskAfter->getTitle());
 
     }

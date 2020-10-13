@@ -57,7 +57,7 @@ class UserControllerTest extends WebTestCase
         $form['user[password][first]'] = 'test';
         $form['user[password][second]'] = 'test';
         $form['user[email]'] = 'test@test.com';
-//        $form['user[roles][]'] = "ROLE_ADMIN";
+        $form['user[roles][0]']->tick();
         $client->submit($form);
 
         $testUserAfter = $userRepository->findOneBy(['id'=>'2']);
@@ -65,7 +65,7 @@ class UserControllerTest extends WebTestCase
         $this->assertInstanceOf(User::class,$testUserAfter);
         $this->assertNotSame($testUserAfter->getUsername(),$testUserBefore->getUsername());
         $this->assertSame('UserTest',$testUserAfter->getUsername());
-//        $this->assertSame('ROLE_ADMIN',$testUserAfter->getRoles()[0]);
+        $this->assertSame('ROLE_ADMIN',$testUserAfter->getRoles()[0]);
 
     }
 
