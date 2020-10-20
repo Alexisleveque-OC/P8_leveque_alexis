@@ -1,9 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{#    {% if error %}#}
-{#        <div class="alert alert-danger" role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
-{#    {% endif %}#}
 
     <form method="post">
         {% if error %}
@@ -18,7 +15,7 @@
         {% if app.user == null %}
             <div class="container ">
                 <div class="offset-2 col-8">
-                    <h1 class="h3 mb-3 font-weight-normal">Connection</h1>
+                    <h1 class="h3 mb-3 font-weight-normal connexion">Connection</h1>
                     <label for="inputEmail">Email</label>
                     <input type="text" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
                            required autofocus>
