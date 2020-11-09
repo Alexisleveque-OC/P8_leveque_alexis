@@ -3,11 +3,6 @@
 
 namespace App\Tests\Controller;
 
-
-use App\Entity\Task;
-use App\Entity\User;
-use App\Repository\TaskRepository;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class SecurityControllerTest extends WebTestCase
@@ -27,16 +22,39 @@ class SecurityControllerTest extends WebTestCase
         $client->submit($form);
 
         $response = $client->getResponse();
-//        dump($response);
 
         $this->assertSame(302, $response->getStatusCode());
 
-//        $client->followRedirect();
-        dump($client);
-        $this->assertSame(1, $crawler->filter('a.logout')->count());
+        $crawler = $client->followRedirect();
 
-//        $this->assert
+        $infoUser = $crawler->filter('h4')->text();
 
+        $this->assertSame(1, $crawler->filter('a#logout')->count());
+        $this->assertSame('Vous êtes connecter en tant que User1.', $infoUser);
     }
 
+    public function testLoginWithWrongInfo()
+    {
+        $client = $this->CreateClient();
+
+        $crawler = $client->request('GET', '/login');
+
+        $this->assertSame(1, $crawler->filter('h1.connexion')->count());
+
+        $form = $crawler->selectButton('Connexion')->form();
+        $form['email'] = 'user1@gmail.com';
+        $form['password'] = 'nimportequoi';
+//        $form['_crsf_token'] = 'token';
+        $client->submit($form);
+
+        $response = $client->getResponse();
+
+        $this->assertSame(302, $response->getStatusCode());
+
+        $crawler = $client->followRedirect();
+
+        $infoUser = $crawler->filter('div.alert-danger')->text();
+
+        $this->assertSame('Il y a une erreur sur la saisie des informations.', $infoUser);
+    }
 }
