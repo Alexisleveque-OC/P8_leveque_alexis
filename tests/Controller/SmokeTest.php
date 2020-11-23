@@ -15,7 +15,7 @@ class SmokeTest extends WebTestCase
      * @param $url
      * @param string $method
      * @param int $expectedStatusCode
-     * @param bool $withLogin
+     * @param null $loggedAs
      */
     public function testPageIsSuccessful($pageName,
                                          $url,

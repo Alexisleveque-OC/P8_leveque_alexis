@@ -47,7 +47,8 @@
         {% endif %}
 
         {% if app.user %}
-                <a href="{{ path('logout') }}" class="btn btn-danger">Se déconnecter</a>
+                <a href="{{ path('logout') }}" class="btn btn-danger" id="logout">Se déconnecter</a>
+            <h4>Vous êtes connecter en tant que {{ app.user.username }}.</h4>
         {% endif %}
 
         {% if not app.user and 'login' != app.request.attributes.get('_route') %}
@@ -91,7 +92,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p class="pull-right">Copyright &copy; OpenClassrooms</p>
+                <p class="text-right">Copyright &copy; OpenClassrooms</p>
             </div>
         </div>
     </footer>
