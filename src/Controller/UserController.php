@@ -49,7 +49,7 @@ class UserController extends AbstractController
 
             $this->addFlash('success', "L'utilisateur a bien été ajouté.");
 
-            if ($this->getUser() && $this->getUser()->getRole() == ['ROLE_ADMIN']) {
+            if ($this->getUser() && $this->getUser()->getRoles() == ['ROLE_ADMIN']) {
                 return $this->redirectToRoute('user_list');
             }
                 return $this->redirectToRoute('homepage');

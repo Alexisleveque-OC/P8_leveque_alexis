@@ -93,9 +93,9 @@ class SmokeTest extends WebTestCase
         yield['user_list', '/users', 'GET', 302]; //redirect to "/login"
         yield['user_list', '/users', 'GET', 200, 'Admin'];
         yield['user_list', '/users', 'GET', 403, 'User1'];
-        yield['user_create', '/users/create', 'GET', 302]; //redirect to "/login"
+        yield['user_create', '/users/create', 'GET', 200];
         yield['user_create', '/users/create', 'GET', 200, 'Admin'];
-        yield['user_create', '/users/create', 'GET', 403, 'User1'];
+        yield['user_create', '/users/create', 'GET', 200, 'User1'];
         // User id 1 = Admin
         yield['user_edit', '/users/1/edit', 'GET', 302]; //redirect to "/login"
         yield['user_edit', '/users/1/edit', 'GET', 200, 'Admin'];
