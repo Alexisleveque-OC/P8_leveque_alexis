@@ -4,12 +4,21 @@
 {% block header_img %}{% endblock %}
 
 {% block body %}
-    <div class="row">
 
-        {{ form_start(form, {'action' : path('user_create')}) }}
-            {{ form_widget(form) }}
-        <hr>
-        <button type="submit" class="btn btn-success pull-right">Ajouter</button>
-        {{ form_end(form) }}
+    <div class="row">
+        <div class="offset-2 col-8">
+            {{ form_start(form, {'action' : path('user_create')}) }}
+            {{ form_row(form.username) }}
+            {{ form_row(form.password) }}
+            {{ form_row(form.email) }}
+            {% if is_granted('USER_LIST') %}
+                {{ form_row(form.roles) }}
+            {% else %}
+                {{ form_row(form.roles,{'attr' : {"style": "display:none"}}) }}
+            {% endif %}
+            <hr>
+            <button type="submit" class="btn btn-success pull-right">Ajouter</button>
+            {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}

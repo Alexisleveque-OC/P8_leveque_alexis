@@ -33,19 +33,20 @@ class UserVoter extends Voter
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         $user = $token->getUser();
-        if (!$user instanceof UserInterface) {
+        if (!$user instanceof UserInterface && $user != "anon.") {
             return false;
         }
 
         switch ($attribute) {
+            case self::USER_CREATE:
+                return true;
+        dd('ici');
+                break;
             case (self::USER_LIST ||
-                self::USER_CREATE ||
                 self::USER_EDIT
             ):
                 return $this->security->isGranted("ROLE_ADMIN");
-                break;
         }
-
         return false;
     }
 }

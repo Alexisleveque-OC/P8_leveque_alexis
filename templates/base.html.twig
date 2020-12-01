@@ -41,13 +41,16 @@
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-        {% if is_granted('USER_LIST') or is_granted('USER_CREATE') %}
+        {% if not app.user and 'homepage' == app.request.attributes.get('_route') %}
+            <a href="{{ path('user_create') }}" class="btn btn-primary">S'inscrire</a>
+        {% endif %}
+        {% if is_granted('USER_LIST') %}
             <a href="{{ path('user_list') }}" class="btn btn-success">Gérer les utilisateurs</a>
             <a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
         {% endif %}
 
         {% if app.user %}
-                <a href="{{ path('logout') }}" class="btn btn-danger" id="logout">Se déconnecter</a>
+            <a href="{{ path('logout') }}" class="btn btn-danger" id="logout">Se déconnecter</a>
             <h4>Vous êtes connecter en tant que {{ app.user.username }}.</h4>
         {% endif %}
 
