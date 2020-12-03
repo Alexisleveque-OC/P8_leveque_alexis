@@ -40,7 +40,9 @@ class UserController extends AbstractController
     public function createUser(Request $request, RegisterService $registerService)
     {
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user, [
+            'withRoleSelector' => $this->isGranted("ROLE_EDIT")
+        ]);
 
         $form->handleRequest($request);
 

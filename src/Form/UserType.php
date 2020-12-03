@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserType extends AbstractType
 {
@@ -23,16 +24,28 @@ class UserType extends AbstractType
                 'first_options' => ['label' => 'Mot de passe'],
                 'second_options' => ['label' => 'Tapez le mot de passe à nouveau'],
             ])
-            ->add('email', EmailType::class, ['label' => 'Adresse email'])
-            ->add('roles', ChoiceType::class, [
-                    "multiple" => true,
-                    "expanded" => true,
-                    "label" => false,
-                    'choices' => [
-                        'Administrateur' => 'ROLE_ADMIN'
+            ->add('email', EmailType::class, ['label' => 'Adresse email']);
+
+        if ($options['withRoleSelector']) {
+            $builder
+                ->add('roles', ChoiceType::class, [
+                        "multiple" => true,
+                        "expanded" => true,
+                        "label" => false,
+                        'choices' => [
+                            'Administrateur' => 'ROLE_ADMIN'
+                        ]
                     ]
-                ]
-            )
-        ;
+                );
+        }
     }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setRequired('withRoleSelector');
+        $resolver->setAllowedTypes('withRoleSelector','boolean');
+        parent::configureOptions($resolver);
+    }
+
+
 }

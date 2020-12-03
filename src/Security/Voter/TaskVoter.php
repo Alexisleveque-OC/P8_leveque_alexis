@@ -39,6 +39,8 @@ class TaskVoter extends Voter
         if (!$user instanceof UserInterface) {
             return false;
         }
+
+
         switch ($attribute) {
             case self::TASK_CREATE:
             case self::TASK_LIST :
@@ -46,10 +48,14 @@ class TaskVoter extends Voter
                 break;
             case self::TASK_EDIT:
             case self::TASK_DELETE:
-                return ($subject->getUser() === $user && $subject->getUser() !== null) ||
-                    ($subject->getUser() === null && $this->security->isGranted("ROLE_ADMIN"));
+                return $this->isTaskOwner($subject,$user) ||
+                    ($subject->isAnonymous() && $this->security->isGranted("ROLE_ADMIN"));
                 break;
         }
         return false;
+    }
+
+    private function isTaskOwner(Task $task, UserInterface $user){
+        return $task->getUser() === $user;
     }
 }
