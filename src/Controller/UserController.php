@@ -41,7 +41,7 @@ class UserController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user, [
-            'withRoleSelector' => $this->isGranted("ROLE_EDIT")
+            'withRoleSelector' => $this->isGranted("USER_EDIT")
         ]);
 
         $form->handleRequest($request);
@@ -70,7 +70,9 @@ class UserController extends AbstractController
      */
     public function editUser(User $user, Request $request, RegisterService $registerService)
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user,[
+            'withRoleSelector' => $this->isGranted("USER_EDIT")
+        ]);
 
         $form->handleRequest($request);
 

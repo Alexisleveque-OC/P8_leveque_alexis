@@ -48,7 +48,7 @@ class TaskVoter extends Voter
                 break;
             case self::TASK_EDIT:
             case self::TASK_DELETE:
-                return $this->isTaskOwner($subject,$user) ||
+                return $this->isTaskOwner($subject, $user) ||
                     ($subject->isAnonymous() && $this->security->isGranted("ROLE_ADMIN"));
                 break;
         }
