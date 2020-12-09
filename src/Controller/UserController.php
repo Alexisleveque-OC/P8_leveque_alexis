@@ -7,11 +7,11 @@ use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Service\User\RegisterService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends AbstractController
 {
@@ -40,7 +40,9 @@ class UserController extends AbstractController
     public function createUser(Request $request, RegisterService $registerService)
     {
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user, [
+            'withRoleSelector' => $this->isGranted("USER_EDIT")
+        ]);
 
         $form->handleRequest($request);
 
@@ -49,7 +51,11 @@ class UserController extends AbstractController
 
             $this->addFlash('success', "L'utilisateur a bien été ajouté.");
 
-            return $this->redirectToRoute('user_list');
+            if ($this->getUser() && $this->getUser()->getRoles() == ['ROLE_ADMIN']) {
+                return $this->redirectToRoute('user_list');
+            }
+                return $this->redirectToRoute('homepage');
+
         }
 
         return $this->render('user/create.html.twig', ['form' => $form->createView()]);
@@ -64,7 +70,9 @@ class UserController extends AbstractController
      */
     public function editUser(User $user, Request $request, RegisterService $registerService)
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user,[
+            'withRoleSelector' => $this->isGranted("USER_EDIT")
+        ]);
 
         $form->handleRequest($request);
 

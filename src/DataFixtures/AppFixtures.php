@@ -35,13 +35,13 @@ class AppFixtures extends Fixture
 
         $manager->persist($admin);
 
-        for ($k=1; $k<=5 ; $k++){
+        for ($k=1; $k<=100 ; $k++){
             $task = new Task();
             $task->setContent($faker->sentence);
             $task->setTitle($faker->word);
             $task->setCreatedAt(New \DateTime());
 
-            if ($k <= 3){
+            if ($k <= 95){
                 $task->setUser($admin);
             }
             if ($k >= 2 && $k <=4){
@@ -53,7 +53,7 @@ class AppFixtures extends Fixture
 
 
 
-        for ($i = 1; $i <= 5; $i++){
+        for ($i = 1; $i <= 10; $i++){
             $user = new User();
             $user->setUsername(sprintf('User%d', $i));
             $user->setEmail(sprintf('user%d@gmail.com', $i));
@@ -64,13 +64,13 @@ class AppFixtures extends Fixture
 
             $manager->persist($user);
 
-            for ($j=1; $j<=5 ; $j++){
+            for ($j=1; $j<=100 ; $j++){
                 $task = new Task();
                 $task->setContent($faker->sentence);
                 $task->setTitle($faker->word);
                 $task->setCreatedAt(New \DateTime());
 
-                if ($j <= 3){
+                if ($j <= 96){
                     $task->setUser($user);
                 }
                 if ($j >= 2 && $j <=4){
