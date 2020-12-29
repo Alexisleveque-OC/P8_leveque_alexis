@@ -92,7 +92,7 @@ class Task
         return $this->isDone;
     }
 
-    public function isAnonymous(){
+    public function isNotAnonymous(){
         return $this->getUser() instanceof UserInterface;
     }
 

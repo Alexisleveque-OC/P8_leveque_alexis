@@ -16,6 +16,10 @@ List of Paths
 |UserController|user_create|/users/create|Used to create a new User|Authenticated and Admin|
 |UserController|user_edit|/users/{id}/edit|Used to edit an existing User|Authenticated and Admin|
 
+Performances
+============
+For optimize your application, we follow the checklist of [Symfony performance](https://symfony.com/doc/current/performance.html).
+You can follow it to for better performances. (OpCache configuration, autoload optimized, ...)
 
 Controllers
 ===========
@@ -23,7 +27,7 @@ Controllers
 Controllers are the first files called when a user click on your application.
 If you want to add a new features, first you have to create a controller and give him a route to catch it.
 Use the maker to create that controller : 
-```
+```bash
 php bin/console make:controller
 ```
 
@@ -48,7 +52,7 @@ Entities are objects that represent database tables.
 They are hydrated automatically when Doctrine do some request in database.
 
 If you want to create a new entity, you can use the maker :
-```
+```bash
 php bin/console make:entity
 ```
 
@@ -57,12 +61,12 @@ Control or create some fixtures in __src/DataFixtures/appFixtures.php__ for work
 When your new Entity is created, you must update your database.
 For this enter in console :
 
-```
+```bash
 composer prepare
 ```
 
-This command was a maccro created for this project. In fact, it's do this : 
-```
+This command was a macro created for this project. In fact, it's do this : 
+```bash
 php bin/console d:d:drop --if-exists -f 
 && php bin/console d:d:create 
 && php bin/console d:s:update -f
@@ -86,7 +90,7 @@ Ex : with the __Article__ Entity you'll have the __ArticleRepository__.
 You can create your own request using the QueryBuilder in the repository file. 
 See [TaskRepository](https://github.com/Alexisleveque-OC/P8_leveque_alexis/blob/master/src/Repository/TaskRepository.php) for follow example
 
-- in a first time : Create function getBaseQueryBuilder this one select Table which you want to work and joined table if it's necessary.
+  - in a first time : Create function getBaseQueryBuilder this one select Table which you want to work and joined table if it's necessary.
 ````php
 protected function getBaseQueryBuilder()
     {
@@ -96,7 +100,7 @@ protected function getBaseQueryBuilder()
             ->leftJoin('t.user', 'u');
     }
 ````
-- in a second time : Create static function with one clause
+  - in a second time : Create static function with one clause
 ````php
 static function addDoneClause(QueryBuilder $qb, bool $isDone)
     {

@@ -49,10 +49,10 @@ class TaskControllerTest extends WebTestCase
         $client->loginUser($user);
 
         $taskRepository = static::$container->get(TaskRepository::class);
-        // task with id = 6 is created by User1
-        $taskBefore = $taskRepository->findOneBy(['id'=>'6']);
+        // task with id = 101 is created by User1
+        $taskBefore = $taskRepository->findOneBy(['id'=>'101']);
 
-        $crawler = $client->request('GET', '/tasks/6/edit');
+        $crawler = $client->request('GET', '/tasks/101/edit');
 
         $this->assertSame(1, $crawler->filter('h1.taskEdit')->count());
 
@@ -61,7 +61,7 @@ class TaskControllerTest extends WebTestCase
         $form['task[content]'] = 'ContentTest';
         $client->submit($form);
 
-        $taskAfter = $taskRepository->findOneBy(['id' => '6']);
+        $taskAfter = $taskRepository->findOneBy(['id' => '101']);
 
 
         $this->assertInstanceOf(Task::class,$taskAfter);

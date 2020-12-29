@@ -69,26 +69,26 @@ class SmokeTest extends WebTestCase
         yield['task_delete', '/tasks/1/delete', 'GET', 302]; //redirect to "/login"
         yield['task_delete', '/tasks/1/delete', 'GET', 302, 'Admin']; //succesful and redirect to '/tasks'
         yield['task_delete', '/tasks/1/delete', 'GET', 403, 'User1'];
-        // Task 6 create by User1
-        yield['task_edit', '/tasks/6/edit', 'GET', 302]; //redirect to "/login"
-        yield['task_edit', '/tasks/6/edit', 'GET', 403, 'Admin'];
-        yield['task_edit', '/tasks/6/edit', 'GET', 200, 'User1'];
-        yield['task_toggle', '/tasks/6/toggle', 'GET', 302]; //redirect to "/login"
-        yield['task_toggle', '/tasks/6/toggle', 'GET', 403, 'Admin'];
-        yield['task_toggle', '/tasks/6/toggle', 'GET', 302, 'User1']; //succesful and redirect to '/tasks'
-        yield['task_delete', '/tasks/6/delete', 'GET', 302]; //redirect to "/login"
-        yield['task_delete', '/tasks/6/delete', 'GET', 403, 'Admin'];
-        yield['task_delete', '/tasks/6/delete', 'GET', 302, 'User1']; //succesful and redirect to '/tasks'
-        // Task 4 is anonyme
-        yield['task_edit', '/tasks/4/edit', 'GET', 302]; //redirect to "/login"
-        yield['task_edit', '/tasks/4/edit', 'GET', 200, 'Admin'];
-        yield['task_edit', '/tasks/4/edit', 'GET', 403, 'User1'];
-        yield['task_toggle', '/tasks/4/toggle', 'GET', 302]; //redirect to "/login"
-        yield['task_toggle', '/tasks/4/toggle', 'GET', 302, 'Admin']; //succesful and redirect to '/tasks'
-        yield['task_toggle', '/tasks/4/toggle', 'GET', 403, 'User1'];
-        yield['task_delete', '/tasks/4/delete', 'GET', 302]; //redirect to "/login"
-        yield['task_delete', '/tasks/4/delete', 'GET', 302, 'Admin']; //succesful and redirect to '/tasks'
-        yield['task_delete', '/tasks/4/delete', 'GET', 403, 'User1'];
+        // Task 101 create by User1
+        yield['task_edit', '/tasks/101/edit', 'GET', 302]; //redirect to "/login"
+        yield['task_edit', '/tasks/101/edit', 'GET', 403, 'Admin'];
+        yield['task_edit', '/tasks/101/edit', 'GET', 200, 'User1'];
+        yield['task_toggle', '/tasks/101/toggle', 'GET', 302]; //redirect to "/login"
+        yield['task_toggle', '/tasks/101/toggle', 'GET', 403, 'Admin'];
+        yield['task_toggle', '/tasks/101/toggle', 'GET', 302, 'User1']; //successful and redirect to '/tasks'
+        yield['task_delete', '/tasks/101/delete', 'GET', 302]; //redirect to "/login"
+        yield['task_delete', '/tasks/101/delete', 'GET', 403, 'Admin'];
+        yield['task_delete', '/tasks/101/delete', 'GET', 302, 'User1']; //successful and redirect to '/tasks'
+        // Task 96 is anonymous
+        yield['task_edit', '/tasks/96/edit', 'GET', 302]; //redirect to "/login"
+        yield['task_edit', '/tasks/96/edit', 'GET', 200, 'Admin'];
+        yield['task_edit', '/tasks/96/edit', 'GET', 403, 'User1'];
+        yield['task_toggle', '/tasks/96/toggle', 'GET', 302]; //redirect to "/login"
+        yield['task_toggle', '/tasks/96/toggle', 'GET', 302, 'Admin']; //successful and redirect to '/tasks'
+        yield['task_toggle', '/tasks/96/toggle', 'GET', 403, 'User1'];
+        yield['task_delete', '/tasks/96/delete', 'GET', 302]; //redirect to "/login"
+        yield['task_delete', '/tasks/96/delete', 'GET', 302, 'Admin']; //successful and redirect to '/tasks'
+        yield['task_delete', '/tasks/96/delete', 'GET', 403, 'User1'];
 
         yield['user_list', '/users', 'GET', 302]; //redirect to "/login"
         yield['user_list', '/users', 'GET', 200, 'Admin'];
