@@ -52,7 +52,9 @@ Please follow those standards when coding in order to keep the code clean :
 
 [Symfony Best Practices](https://symfony.com/doc/current/best_practices.html)
 
-Please be sure to use CodeClimate to validate your repo.
+[Symfony performances](https://symfony.com/doc/current/performance.html)
+
+Please be sure to use Codacy to validate your repo.
 
 
 Thanks for Contributing !

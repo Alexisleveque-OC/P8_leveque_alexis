@@ -41,7 +41,7 @@ class UserController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user, [
-            'withRoleSelector' => $this->isGranted("USER_EDIT")
+            'withRoleSelector' => $this->isGranted("ROLE_ADMIN")
         ]);
 
         $form->handleRequest($request);

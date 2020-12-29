@@ -42,9 +42,9 @@ class UserType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
+        parent::configureOptions($resolver);
         $resolver->setRequired('withRoleSelector');
         $resolver->setAllowedTypes('withRoleSelector','boolean');
-        parent::configureOptions($resolver);
     }
 
 

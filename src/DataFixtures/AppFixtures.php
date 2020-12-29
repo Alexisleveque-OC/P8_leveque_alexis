@@ -51,8 +51,6 @@ class AppFixtures extends Fixture
             $manager->persist($task);
         }
 
-
-
         for ($i = 1; $i <= 10; $i++){
             $user = new User();
             $user->setUsername(sprintf('User%d', $i));
