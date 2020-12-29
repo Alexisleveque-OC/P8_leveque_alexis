@@ -1,5 +1,7 @@
 # P8_leveque_alexis
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b77d75a1a02a499db91df63f61115449)](https://app.codacy.com/gh/Alexisleveque-OC/P8_leveque_alexis?utm_source=github.com&utm_medium=referral&utm_content=Alexisleveque-OC/P8_leveque_alexis&utm_campaign=Badge_Grade)
+
 This is README.md file of my repository fot Project 8 of the application developer PHP/Symfony.
 
 ## Story of Project
